@@ -94,7 +94,7 @@ class DiamondController extends Controller
                 $limit = 2 * $i -1;
             } elseif ($rows % 2 == 0 && $i == ($midRow + 1)) {              //If number of rows is even
                 $v = 1;
-                $mpSpaceRow = $this->addMirrorSpaces(1);
+                $mpSpaceRow = $this->addSpaces(1);
             } elseif ($i > $midRow) {                                       //For lower part of diamond
                 if ($space < 1)
                     $space = 1;
