@@ -127,23 +127,6 @@ class DiamondController extends Controller
                     }
                 }
 
-                /*if (strlen($insert) > 1) {                                  //If the inserted string length is greatet then 1
-                    $str = (string)$insert;
-                    for ($k = 0; $k < strlen($str); $k++) {
-                        $appResult = $this->append($rowString, $limit, $str[$k]);               //Appending character of string one by one
-                        if (!$appResult) {                                                      //Checking the result returned of append
-                            $prev = substr($str, $k);
-                            continue;//break;
-                        }
-                        $rowString = $appResult;
-                    }
-                } else {
-                    $appResult = $this->append($rowString, $limit, $insert);                    //Appending single character
-                    if (!$appResult)                                                            //Checking the result returned of append
-                        continue;//break;
-                    $rowString = $appResult;
-                }*/
-
                 $str = (string)$insert;
                 for ($k = 0; $k < strlen($str); $k++) {
                     $appResult = $this->append($rowString, $limit, $str[$k]);               //Appending character of string one by one
