@@ -119,6 +119,7 @@ class DiamondController extends Controller
                 }
 
                 if (strlen($text) < $limit) {                               //For the text UNOCOIN
+                    var_dump(strlen($unoText));
                     $unoText = str_repeat($unoText, floor($limit/strlen($unoText)));
                     for ($k = 0; $k < strlen($unoText); $k++) {
                         $appResult = $this->append($text, $limit, $unoText[$k]);
