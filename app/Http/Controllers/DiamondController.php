@@ -129,9 +129,9 @@ class DiamondController extends Controller
                             break;
                     }*/
 
-                    var_dump(floor($limit/strlen($unoText)));
+                    //var_dump(floor($limit/strlen($unoText)));
 
-                    $ut = str_repeat($unoText, floor($limit/strlen($unoText)));
+                    $ut = str_repeat($unoText, floor($limit/strlen($unoText))?floor($limit/strlen($unoText)):1);
                     for ($k = 0; $k < strlen($ut); $k++) {
                         $appResult = $this->append($text, $limit, $ut[$k]);
                         if ($appResult)
