@@ -76,12 +76,11 @@ class DiamondController extends Controller
         $space = $midRow-1;                    //Number of space characters
         $prev = false;
 
-        //$unoText = 'UNOCOIN';
+        $unoText = 'UNOCOIN';
 
         $v = 0;
 
         for ($i = 1; $i <= $rows; $i++) {     //Loop iterates on the total number of rows
-            $unoText = 'UNOCOIN';
             $spaceRow = '';
             $rowString = '';
             $mpSpaceRow = '';
@@ -119,21 +118,8 @@ class DiamondController extends Controller
                 }
 
                 if (strlen($text) < $limit) {                               //For the text UNOCOIN
-                    /*var_dump(strlen($unoText));
-                    $unoText = str_repeat($unoText, floor($limit/strlen($unoText)));
                     for ($k = 0; $k < strlen($unoText); $k++) {
                         $appResult = $this->append($text, $limit, $unoText[$k]);
-                        if ($appResult)
-                            $text = $appResult;
-                        else
-                            break;
-                    }*/
-
-                    //var_dump(floor($limit/strlen($unoText)));
-
-                    $ut = str_repeat($unoText, floor($limit/strlen($unoText))?floor($limit/strlen($unoText)):1);
-                    for ($k = 0; $k < strlen($ut); $k++) {
-                        $appResult = $this->append($text, $limit, $ut[$k]);
                         if ($appResult)
                             $text = $appResult;
                         else
