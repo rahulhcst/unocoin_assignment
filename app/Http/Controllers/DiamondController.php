@@ -99,12 +99,8 @@ class DiamondController extends Controller
                 if ($space < 1)
                     $space = 1;
 
-                /*for ($j = 1; $j <= $space; $j++) {
-                    $spaceRow .= ' ';                                       //Appending space in starting of each row
-                    $mpSpaceRow .= '  ';                                    //Appending space for mirror diamond
-                }*/
-                $spaceRow = $this->addSpaces($space);
-                $mpSpaceRow = $this->addMirrorSpaces($space);
+                $spaceRow = $this->addSpaces($space);                       //Appending space in starting of each row
+                $mpSpaceRow = $this->addMirrorSpaces($space);               //Appending space for mirror diamond
 
                 $limit = $rows-($space*2 + $v);
                 $space++;
@@ -137,20 +133,20 @@ class DiamondController extends Controller
                         $appResult = $this->append($rowString, $limit, $str[$k]);               //Appending character of string one by one
                         if (!$appResult) {                                                      //Checking the result returned of append
                             $prev = substr($str, $k);
-                            break;
+                            continue;//break;
                         }
                         $rowString = $appResult;
                     }
                 } else {
                     $appResult = $this->append($rowString, $limit, $insert);                    //Appending single character
                     if (!$appResult)                                                            //Checking the result returned of append
-                        break;
+                        continue;//break;
                     $rowString = $appResult;
                 }
 
                 $appResult = $this->append($rowString, $limit, '+');                           //Appending '+' to string
                 if (!$appResult)
-                    break;
+                    continue;//break;
                 $rowString = $appResult;
             }       //for $j
             echo "$spaceRow$rowString$mpSpaceRow$text\r\n";                     //Printing the output row after appending
