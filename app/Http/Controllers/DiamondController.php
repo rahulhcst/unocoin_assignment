@@ -62,6 +62,13 @@ class DiamondController extends Controller
         return false;
     }
 
+    private function fibo (&$a, &$b)
+    {
+        $temp = $a;
+        $a = $b;
+        $b += $temp;
+    }
+
     /**
      * @return void
      */
@@ -111,9 +118,10 @@ class DiamondController extends Controller
                     $insert = $prev;
                     $prev = false;
                 } else {
-                    $temp = $a;
+                    /*$temp = $a;
                     $a = $b;
-                    $b += $temp;
+                    $b += $temp;*/
+                    $this->fibo($a, $b);
                     $insert = (string)$a;
                 }
 
