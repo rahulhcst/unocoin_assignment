@@ -98,10 +98,12 @@ class DiamondController extends Controller
                 if ($space < 1)
                     $space = 1;
 
-                for ($j = 1; $j <= $space; $j++) {
+                /*for ($j = 1; $j <= $space; $j++) {
                     $spaceRow .= ' ';                                       //Appending space in starting of each row
                     $mpSpaceRow .= '  ';                                    //Appending space for mirror diamond
-                }
+                }*/
+                $spaceRow = $this->addSpaces($space);
+                $mpSpaceRow = $this->addMirrorSpaces($space);
 
                 $limit = $rows-($space*2 + $v);
                 $space++;
