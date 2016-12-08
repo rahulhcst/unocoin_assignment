@@ -20,6 +20,22 @@ class DiamondController extends Controller
         $this->rows = $nor;
     }
 
+    private function addSpaces($nos)
+    {
+        $spaceString = '';
+        for ($i = 1; $i <= $nos; $i++)
+            $spaceString .= ' ';
+        return $spaceString;
+    }
+
+    private function addMirrorSpaces($nos)
+    {
+        $spaceString = ' ';
+        for ($i = 1; $i <= $nos; $i++)
+            $spaceString .= '  ';
+        return $spaceString;
+    }
+
     /**
      * @param string $string
      * @param int $length
@@ -63,10 +79,12 @@ class DiamondController extends Controller
             $text = '';
 
             if ($i <= $midRow) {                        //For upper part of diamond
-                for ($j = 1; $j <= $space; $j++) {
+                /*for ($j = 1; $j <= $space; $j++) {
                     $spaceRow .= ' ';                                       //Appending space in starting of each row
                     $mpSpaceRow .= '  ';                                    //Appending space for mirror diamond
-                }
+                }*/
+                $spaceRow = $this->addSpaces($space);
+                $mpSpaceRow = $this->addMirrorSpaces($space);
                 $space--;
                 $limit = 2 * $i -1;
             } elseif ($rows % 2 == 0 && $i == ($midRow + 1)) {              //If number of rows is even
