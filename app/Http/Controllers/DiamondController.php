@@ -62,6 +62,10 @@ class DiamondController extends Controller
         return false;
     }
 
+    /**
+     * @param $a
+     * @param $b
+     */
     private function fibo (&$a, &$b)
     {
         $temp = $a;
@@ -118,9 +122,6 @@ class DiamondController extends Controller
                     $insert = $prev;
                     $prev = false;
                 } else {
-                    /*$temp = $a;
-                    $a = $b;
-                    $b += $temp;*/
                     $this->fibo($a, $b);
                     $insert = (string)$a;
                 }

@@ -85,6 +85,6 @@ class Student extends Command
         }
 
         $studentObj = new StudentController($studentDetails, $subjects);        //Instantiating class StudentController and passing array studentDetails, $subjects
-        $studentObj->execute();                                                 //Calling function execute
+        $studentObj->generateResult();                                                 //Calling function execute
     }
 }

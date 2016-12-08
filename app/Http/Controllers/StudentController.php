@@ -98,7 +98,7 @@ class StudentController extends Controller
     /**
      *@return void
      */
-    public function execute ()
+    public function generateResult ()
     {
         $studenDetails = $this->sDetails;                       //Assigning class variable sDetails to local variable studentDetails
         $subjects = $this->subjects;                            //Assigning class variable subjects to local variable subjects
