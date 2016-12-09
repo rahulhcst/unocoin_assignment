@@ -66,7 +66,7 @@ class DiamondController extends Controller
      * @param $a
      * @param $b
      */
-    private function fibo (&$a, &$b)
+    private function fibo (&$a, &$b)                                    //Computes elements of Fibonnaci series
     {
         $temp = $a;
         $a = $b;
