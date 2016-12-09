@@ -1,7 +1,10 @@
 To run this project requires PHP version 5.6 or above.
 
+These are the CLI based programs.
+
 Fibonacci series in diamond shape
-Following are the steps to run this program:
+Following are the steps to run this program:<br/>
+
 1. Open console and cd into "unocoin" directory and type:
 
         php artisan diamond
@@ -102,8 +105,8 @@ Enter marks for student Vinod:
  > 30
 
 
-Rank      |Name      |English   |Math      |Science   |Total Marks
-____________________________________________________________________
-1         |Simran    |50        |70        |50        |170
-2         |Raj       |30        |50        |40        |120
-3         |Vinod     |40        |40        |30        |110
+Rank      |Name      |English   |Math      |Science   |Total Marks<br/>
+____________________________________________________________________<br/>
+1         |Simran    |50        |70        |50        |170<br/>
+2         |Raj       |30        |50        |40        |120<br/>
+3         |Vinod     |40        |40        |30        |110<br/>
