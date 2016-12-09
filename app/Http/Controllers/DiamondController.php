@@ -80,16 +80,11 @@ class DiamondController extends Controller
     {
         $rows = $this->rows;
         $midRow = (int)ceil($rows/2);           //Middle row
-
         $a = 0;
         $b = 1;
-
-        $space = $midRow-1;                    //Number of space characters
         $spaceCount = $midRow-1;                    //Counter for number of space characters
         $prev = false;
-
         $unoText = 'UNOCOIN';
-
         $v = 0;
 
         for ($i = 1; $i <= $rows; $i++) {     //Loop iterates on the total number of rows
@@ -101,8 +96,6 @@ class DiamondController extends Controller
             if ($i <= $midRow) {                        //For upper part of diamond
                 $spaceRow = $this->addSpaces($spaceCount);                       //Appending space in starting of each row
                 $mpSpaceRow = $this->addMirrorSpaces($spaceCount);               //Appending space for mirror diamond
-
-                $space--;
                 $spaceCount--;
                 $limit = 2 * $i -1;
             } elseif ($rows % 2 == 0 && $i == ($midRow + 1)) {              //If number of rows is even
@@ -111,10 +104,8 @@ class DiamondController extends Controller
             } elseif ($i > $midRow) {                                       //For lower part of diamond
                 if ($spaceCount < 1)
                     $spaceCount = 1;
-
                 $spaceRow = $this->addSpaces($spaceCount);                       //Appending space in starting of each row
                 $mpSpaceRow = $this->addMirrorSpaces($spaceCount);               //Appending space for mirror diamond
-
                 $limit = $rows-($spaceCount*2 + $v);
                 $spaceCount++;
             }
@@ -156,5 +147,4 @@ class DiamondController extends Controller
             echo "$spaceRow$rowString$mpSpaceRow$text\r\n";                     //Printing the output row after appending
         }           //for $i
     }
-
 }
