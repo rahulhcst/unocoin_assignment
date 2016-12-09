@@ -85,6 +85,7 @@ class DiamondController extends Controller
         $b = 1;
 
         $space = $midRow-1;                    //Number of space characters
+        $spaceCount = $midRow-1;                    //Counter for number of space characters
         $prev = false;
 
         $unoText = 'UNOCOIN';
@@ -98,23 +99,24 @@ class DiamondController extends Controller
             $text = '';
 
             if ($i <= $midRow) {                        //For upper part of diamond
-                $spaceRow = $this->addSpaces($space);                       //Appending space in starting of each row
-                $mpSpaceRow = $this->addMirrorSpaces($space);               //Appending space for mirror diamond
+                $spaceRow = $this->addSpaces($spaceCount);                       //Appending space in starting of each row
+                $mpSpaceRow = $this->addMirrorSpaces($spaceCount);               //Appending space for mirror diamond
 
                 $space--;
+                $spaceCount--;
                 $limit = 2 * $i -1;
             } elseif ($rows % 2 == 0 && $i == ($midRow + 1)) {              //If number of rows is even
                 $v = 1;
                 $mpSpaceRow = $this->addSpaces(1);
             } elseif ($i > $midRow) {                                       //For lower part of diamond
-                if ($space < 1)
-                    $space = 1;
+                if ($spaceCount < 1)
+                    $spaceCount = 1;
 
-                $spaceRow = $this->addSpaces($space);                       //Appending space in starting of each row
-                $mpSpaceRow = $this->addMirrorSpaces($space);               //Appending space for mirror diamond
+                $spaceRow = $this->addSpaces($spaceCount);                       //Appending space in starting of each row
+                $mpSpaceRow = $this->addMirrorSpaces($spaceCount);               //Appending space for mirror diamond
 
-                $limit = $rows-($space*2 + $v);
-                $space++;
+                $limit = $rows-($spaceCount*2 + $v);
+                $spaceCount++;
             }
 
             for ($j = 1; $j <= $limit; $j++) {                              //Appending charcters to each row
